@@ -13,26 +13,26 @@ import com.isg.Project.services.AgenceService;
 public class AgenceRestController {
 	
 	@Autowired
-	private AgenceService Agence;
+	private AgenceService service;
 	
 	@RequestMapping(value="/agences", method=RequestMethod.POST)
 	public void addAgence(Agence agence) {
-		Agence.addAgence(agence);
+		service.addAgence(agence);
 	}
     
     @RequestMapping(value="/agences", method=RequestMethod.PUT)
 	public void updateAgence(Agence agence) {
-		Agence.updateAgence(agence);
+		service.updateAgence(agence);
 	}
     
     @RequestMapping(value="/agences", method=RequestMethod.DELETE)
 	public void deleteAgence(Agence agence) {
-		Agence.deleteAgence(agence);
+		service.deleteAgence(agence);
 	}
     
     @RequestMapping(value="/agences", method=RequestMethod.GET)
     public Page<Agence> getAllAgences() {
-		return Agence.getAllAgences(0);
+		return service.getAllAgences(0);
 	}
 
 }
